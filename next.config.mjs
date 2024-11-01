@@ -2,11 +2,11 @@ const nextConfig = {
     async headers() {
         return [
             {
-                source: "/api/:slug",
+                source: "/api/:path*",
                 headers: [
                     {
                         key: "Access-Control-Allow-Origin",
-                        value: "*", // 设置你的来源
+                        value: "*",
                     },
                     {
                         key: "Access-Control-Allow-Methods",
@@ -19,6 +19,7 @@ const nextConfig = {
                 ],
             },
         ];
-    },
-    // 添加其他 Next.js 配置
+    }
 };
+
+export default nextConfig;
